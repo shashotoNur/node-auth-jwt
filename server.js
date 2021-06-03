@@ -16,7 +16,13 @@ app.use(cookieParser());
 app.set('view engine', 'ejs');
 
 // database connection
-mongoose.connect(databaseURI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex:true })
+mongoose.connect(databaseURI,
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex:true,
+    useFindAndModify: false
+  })
   .then((_res) =>
   {
     app.listen(3000);
